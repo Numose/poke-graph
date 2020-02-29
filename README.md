@@ -4,6 +4,9 @@
 
 Credit [https://rankedboost.com/pokemon-sun-moon/type-chart/](https://rankedboost.com/pokemon-sun-moon/type-chart/)
 
+- [Example Implemention](https://neo4j.com/blog/pokegraph-gotta-graph-em-all/)
+- [Styling Reference](http://guides.neo4j.com/browser.html)
+
 ## Setup
 
 - Install NodeJS 12+ with NPM
