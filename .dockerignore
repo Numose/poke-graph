@@ -1,0 +1,18 @@
+# Secrets
+.env*
+.git
+# Docker
+bin
+*Dockerfile*
+.dockerignore
+*.yml
+# Logs
+*.log*
+npm-debug.log*
+coverage
+logs
+# Dependency directories
+# node_modules
+# Optional npm cache directory
+.npm
+.npmrc

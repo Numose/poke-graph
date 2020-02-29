@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  neo4j:
+    container_name: poke-graph_neo4j
+    image: neo4j:4.0
+    ports:
+      - '7474:7474' # HTTP
+      - '7687:7687' # BOLT
+    environment:
+      - NEO4J_AUTH=${NEO4J_USER}/${NEO4J_PASSWORD}
+    networks:
+      - webnet
+    restart: unless-stopped
+networks:
+  webnet:

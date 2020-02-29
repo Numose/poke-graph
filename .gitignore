@@ -1,0 +1,16 @@
+# Environment
+*.env*
+!.env.example
+# Logs
+logs/*.png
+*.log*
+npm-debug.log*
+# Output
+dist
+# Dependency directories
+node_modules
+# Optional npm cache directory
+.npm
+.npmrc
+# Misc
+.DS_Store
