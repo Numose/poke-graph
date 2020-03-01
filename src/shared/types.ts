@@ -1,23 +1,17 @@
-import { RelationLabel } from './constants';
+import { AgainstTypeStrength } from './constants';
 
 export interface IAgainst {
   id: number;
   attackTypeName: TypeName;
-  attackStrength: AttackStrength;
+  attackTypeStrength: AgainstTypeStrength;
   defendTypeName: TypeName;
 }
 
 export interface ICreateAgainst {
   attackTypeName: TypeName;
-  attackStrength: AttackStrength;
+  attackTypeStrength: AgainstTypeStrength;
   defendTypeName: TypeName;
 }
-
-export type AttackStrength =
-  | RelationLabel.NO_EFFECT_AGAINST
-  | RelationLabel.NOT_VERY_EFFECTIVE_AGAINST
-  | RelationLabel.NORMAL_AGAINST
-  | RelationLabel.SUPER_EFFECTIVE_AGAINST;
 
 export type Opaque<K, T> = T & { __TYPE__: K };
 

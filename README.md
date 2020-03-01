@@ -28,5 +28,29 @@ Credit [https://rankedboost.com/pokémon-sun-moon/type-chart/](https://rankedboo
 
 ## Sample Neo4j Explorer Queries
 
-- find all Types `MATCH (t:Type) RETURN t as type`
-- find all Types a FIGHTING Type is Super Effective Against `MATCH (a:Type { name: 'FIGHTING' })-[:SUPER_EFFECTIVE_AGAINST]->(d:Type) RETURN a AS attacker, collect(d) as defenders`
+- **find all Types**
+
+```Cypher
+MATCH (t:Type)
+WITH t
+ORDER BY t.name ASC
+RETURN t AS type
+```
+
+- **find all Types a FIGHTING Type is Super Effective against**
+
+```Cypher
+MATCH (:Type { name: 'FIGHTING' })-[:AGAINST_TYPE { strength: 'SUPER_EFFECTIVE' }]->(d:Type)
+WITH d
+ORDER BY d.name ASC
+RETURN d AS type
+```
+
+- **find all Type-strengths for a FIGHTING Type**
+
+```Cypher
+MATCH (:Type { name: 'FIGHTING' })-[r:AGAINST_TYPE]->(d:Type)
+WITH r, d
+ORDER BY r.strength ASC, d.name ASC
+RETURN r.strength AS strength, COLLECT(d) AS type
+```

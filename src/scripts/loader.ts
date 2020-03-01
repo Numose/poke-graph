@@ -35,7 +35,11 @@ export async function loadData(): Promise<void> {
     await Promise.all(typeData.map(async data => loadTypeData(driver, data)));
     // -- load AGAINST data
     const againstData: ICreateAgainst[] = typeData.flatMap(data =>
-      data.versus.map(item => ({ attackTypeName: data.name, attackStrength: item.strength, defendTypeName: item.name }))
+      data.versus.map(item => ({
+        attackTypeName: data.name,
+        attackTypeStrength: item.strength,
+        defendTypeName: item.name
+      }))
     );
     await Promise.all(againstData.map(data => loadAgainstData(driver, data)));
   } catch (err) {

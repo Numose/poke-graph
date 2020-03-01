@@ -1,7 +1,7 @@
 import { cyan, green, grey } from 'colors';
 import { Driver, Relationship } from 'neo4j-driver';
 
-import { NodeLabel } from '../shared/constants';
+import { NodeLabel, RelationLabel } from '../shared/constants';
 import { IAgainst, ICreateAgainst } from '../shared/types';
 
 export async function loadAgainstData(driver: Driver, data: ICreateAgainst): Promise<IAgainst> {
@@ -9,7 +9,7 @@ export async function loadAgainstData(driver: Driver, data: ICreateAgainst): Pro
   try {
     let statement = '';
     statement += `MATCH (a:${NodeLabel.TYPE} { name: $attackTypeName }), (d:${NodeLabel.TYPE} { name: $defendTypeName })\n`;
-    statement += `MERGE (a)-[r:${data.attackStrength}]->(d)\n`;
+    statement += `MERGE (a)-[r:${RelationLabel.AGAINST_TYPE} { strength: $attackTypeStrength }]->(d)\n`;
     statement += `RETURN r`;
 
     const { records } = await session.run(statement, data);
@@ -20,7 +20,7 @@ export async function loadAgainstData(driver: Driver, data: ICreateAgainst): Pro
       cyan(`<${identity.toNumber().toString()}>`.padEnd(4, ' ')),
       'created:',
       grey(`(${data.attackTypeName}:${NodeLabel.TYPE})`),
-      green(`-[:${data.attackStrength}]->`),
+      green(`-[:${RelationLabel.AGAINST_TYPE} { strength: ${data.attackTypeStrength} }]->`),
       grey(`(${data.defendTypeName}:${NodeLabel.TYPE})`)
     );
     return { id: identity.toNumber(), ...data };
