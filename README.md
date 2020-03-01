@@ -25,3 +25,8 @@ Credit [https://rankedboost.com/pokemon-sun-moon/type-chart/](https://rankedboos
 ## Teardown
 
 - Stop the containers with `docker-compose down --remove-orphans` WARNING: The stopping the containers or otherwise exiting Docker will kill any data you have stored in it. This is great for experimenting as it's easy to flush data and start fresh with the loaders but bad if you've entered a bunch of information into your local volume that you want to keep.
+
+## Sample Neo4j Explorer Queries
+
+- find all Types `MATCH (t:Type) RETURN t as type`
+- find all Types a FIGHTING Type is Super Effective Against `MATCH (a:Type { name: 'FIGHTING' })-[:SUPER_EFFECTIVE_AGAINST]->(d:Type) RETURN a AS attacker, collect(d) as defenders`
