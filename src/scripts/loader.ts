@@ -30,7 +30,7 @@ export async function loadData(): Promise<void> {
      * IMPORTANT load order matters
      */
     // -- apply constraints
-    // await applyConstraints(driver);
+    await applyConstraints(driver);
     // -- load Type data
     await Promise.all(typeData.map(async data => loadTypeData(driver, data)));
     // -- load AGAINST data
