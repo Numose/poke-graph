@@ -1,8 +1,7 @@
 # Poké Graph
 
 ![Type Chart](./assets/type-chart.bmp)
-
-Credit [https://rankedboost.com/pokémon-sun-moon/type-chart/](https://rankedboost.com/pokémon-sun-moon/type-chart/)
+Image credit [https://rankedboost.com/pokémon-sun-moon/type-chart/](https://rankedboost.com/pokémon-sun-moon/type-chart/)
 
 - [Example Implemention](https://neo4j.com/blog/pokégraph-gotta-graph-em-all/)
 - [Styling Reference](http://guides.neo4j.com/browser.html)
@@ -24,7 +23,7 @@ Credit [https://rankedboost.com/pokémon-sun-moon/type-chart/](https://rankedboo
 
 ## Teardown
 
-- Stop the containers with `docker-compose down --remove-orphans` WARNING: The stopping the containers or otherwise exiting Docker will kill any data you have stored in it. This is great for experimenting as it's easy to flush data and start fresh with the loaders but bad if you've entered a bunch of information into your local volume that you want to keep.
+- Stop the containers with `docker-compose down --remove-orphans` WARNING: Stopping the containers or otherwise exiting Docker will kill any data you have stored in it. This is great for experimenting as it's easy to flush data and start fresh with the loaders but bad if you've entered a bunch of information into your local volume that you want to keep.
 
 ## Sample Neo4j Explorer Queries
 
