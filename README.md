@@ -1,10 +1,10 @@
-# Poke Graph
+# Poké Graph
 
-![Type Chart](assets/type-chart.bmp Type Chart)
+![Type Chart](./assets/type-chart.bmp)
 
-Credit [https://rankedboost.com/pokemon-sun-moon/type-chart/](https://rankedboost.com/pokemon-sun-moon/type-chart/)
+Credit [https://rankedboost.com/pokémon-sun-moon/type-chart/](https://rankedboost.com/pokémon-sun-moon/type-chart/)
 
-- [Example Implemention](https://neo4j.com/blog/pokegraph-gotta-graph-em-all/)
+- [Example Implemention](https://neo4j.com/blog/pokégraph-gotta-graph-em-all/)
 - [Styling Reference](http://guides.neo4j.com/browser.html)
 
 ## Setup
@@ -12,7 +12,7 @@ Credit [https://rankedboost.com/pokemon-sun-moon/type-chart/](https://rankedboos
 - Install NodeJS 12+ with NPM
 - Install Docker and Docker Compose
 - Create the .env file in the project's root directory and copy and paste the content of the `.env.example` file into it
-- Run the Neo4j container from your terminal with `docker-compose up -d` from the project's root directory; you can check that it's running with `docker container ls`, the container will be called `poke-graph_neo4j`
+- Run the Neo4j container from your terminal with `docker-compose up -d` from the project's root directory; you can check that it's running with `docker container ls`, the container will be called `poké-graph_neo4j`
 - Seed Neo4j with data by running `npm run load`
 - Connect to the Neo4j graph explorer:
   - Navigate your browser to [http://localhost:7474](http://localhost:7474)
@@ -20,7 +20,7 @@ Credit [https://rankedboost.com/pokemon-sun-moon/type-chart/](https://rankedboos
     - Connect URL: **`bolt://localhost:7687`**
     - Authentication type: `Username / Password`
     - Username: `neo4j`
-    - Password: `pokemon`
+    - Password: `pokémon`
 
 ## Teardown
 

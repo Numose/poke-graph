@@ -1,10 +1,10 @@
 {
   "name": "poke-graph",
   "version": "0.0.1",
-  "description": "Poke Graph",
+  "description": "Poké Graph",
   "private": false,
   "license": "none",
-  "repository": "https://github.com/Numose/poke-graph",
+  "repository": "https://github.com/Numose/poké-graph",
   "author": {
     "name": "Andrew Robert Cernek",
     "email": "andrew@cernek.dev"
