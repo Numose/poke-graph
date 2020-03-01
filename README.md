@@ -20,7 +20,7 @@ Credit [https://rankedboost.com/pokémon-sun-moon/type-chart/](https://rankedboo
     - Connect URL: **`bolt://localhost:7687`**
     - Authentication type: `Username / Password`
     - Username: `neo4j`
-    - Password: `pokémon`
+    - Password: `pokemon`
 
 ## Teardown
 
