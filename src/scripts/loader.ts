@@ -11,9 +11,7 @@ import { ICreateAgainst } from '../shared/types';
 export async function applyConstraints(driver: Driver): Promise<void> {
   const session = driver.session();
   try {
-    // -- Type
     await session.run(`CREATE CONSTRAINT ON (t:${NodeLabel.TYPE}) ASSERT t.name IS UNIQUE`);
-
     console.log('[*] Constraints applied');
   } catch (error) {
     throw error;
@@ -23,8 +21,8 @@ export async function applyConstraints(driver: Driver): Promise<void> {
 }
 
 export async function loadData(): Promise<void> {
-  const neo4jConfig = new Neo4jConfig();
-  const driver = neo4jDriver(neo4jConfig.host, auth.basic(neo4jConfig.user, neo4jConfig.password));
+  const { host, password, user } = new Neo4jConfig();
+  const driver = neo4jDriver(host, auth.basic(user, password));
   try {
     /**
      * IMPORTANT load order matters
